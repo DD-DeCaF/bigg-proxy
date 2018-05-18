@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: bigg-prozy
+spec:
+  tls:
+  - hosts:
+    - api.dd-decaf.eu
+    secretName: decaf-tls
+  rules:
+  - host: api.dd-decaf.eu
+    http:
+      paths:
+      - path: /bigg
+        backend:
+          serviceName: bigg-proxy
+          servicePort: 80

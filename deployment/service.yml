@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: bigg-proxy
+  annotations:
+    prometheus.io/probe: "true"
+spec:
+  selector:
+    app: bigg-proxy
+  ports:
+  - name: web
+    protocol: TCP
+    port: 80
+    targetPort: 80
