@@ -23,4 +23,4 @@ IMAGE_LATEST=gcr.io/dd-decaf-cfbf6/bigg-proxy:latest
 docker build -t ${IMAGE_SHA} -t ${IMAGE_LATEST} .
 docker push ${IMAGE_SHA}
 docker push ${IMAGE_LATEST}
-kubectl set image deployment/bigg-proxy bigg-proxy=${IMAGE_SHA}
+kubectl set image deployment/bigg-proxy web=${IMAGE_SHA}
